@@ -1,12 +1,13 @@
 export interface ProductItem {
   id: number
   title: string
-  brand: string
   description: string
   price: number
   category: string
   rating: number
   stock: number
+
+  brand?: string
 }
 
 export interface Dimensions {

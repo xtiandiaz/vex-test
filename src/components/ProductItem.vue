@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
 import type { ProductItem } from '@/types';
 
 defineProps<{
@@ -7,5 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  {{ item }}
+  <RouterLink :to="`product/${item.id}`">
+    {{ item.title }}
+  </RouterLink>
 </template>
