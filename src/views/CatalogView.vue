@@ -26,11 +26,11 @@ const { isFetching, error, data } = useFetch(url, { refetch: true }).json<Catalo
   
   <div v-if="isFetching">Loading...</div>
   <div v-else-if="error">Error: {{ error }}</div>
-  <div v-else-if="data && data.products.length > 0">
+  <section v-else-if="data && data.products.length > 0">
     <ProductItem v-for="(item) of data.products"
       :key="item.id"
       :item="item"
     />
-  </div>
+  </section>
   <div v-else>No results</div>
 </template>

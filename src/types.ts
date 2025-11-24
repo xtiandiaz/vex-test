@@ -8,6 +8,7 @@ export interface ProductItem {
   stock: number
 
   brand?: string
+  thumbnail?: string
 }
 
 export interface Dimensions {
@@ -31,6 +32,8 @@ export interface Product extends ProductItem {
   warrantyInformation: string
   shippingInformation: string
   reviews: Review[]
+
+  images?: string[]
 }
 
 export interface Catalog {

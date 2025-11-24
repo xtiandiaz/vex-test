@@ -9,6 +9,11 @@ defineProps<{
 
 <template>
   <RouterLink :to="`product/${item.id}`">
-    {{ item.title }}
+    <article>
+      <img :src="item.thumbnail" :alt="item.title" />
+      <h3>{{ item.title }}</h3>
+      <h4>{{ item.brand }}</h4>
+      <h4>{{ item.price }}</h4>
+    </article>
   </RouterLink>
 </template>
