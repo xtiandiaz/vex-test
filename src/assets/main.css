@@ -1,1 +1,5 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-brand: oklch(54.1% 0.281 293.009);
+}

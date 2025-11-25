@@ -20,23 +20,23 @@ const { isFetching, error, data } = useFetch(url, { refetch: true }).json<Catalo
 </script>
 
 <template>
-  <nav class="flex justify-center p-4">
-    <SearchField 
-      @search-by="(term) => searchTerm = term"
-    />
+  <nav class="flex justify-center items-center bg-brand text-white h-12">
+    <span class="font-bold text-xl">💸 Catalog</span>
   </nav>
-  <main class="flex flex-col items-center m-8">
+  <main class="flex flex-col gap-8 items-center m-8">
+    <SearchField @search-by="(term) => searchTerm = term" />
+    
     <div v-if="isFetching">Loading...</div>
     <div v-else-if="error">Error: {{ error }}</div>
     <section 
       v-else-if="data && data.products.length > 0"
-      class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl"
     >
       <ProductItem v-for="(item) of data.products"
         :key="item.id"
         :item="item"
       />
     </section>
-    <div v-else>No results</div>
+    <div v-else>No results for "{{ searchTerm }}"</div>
   </main>
 </template>

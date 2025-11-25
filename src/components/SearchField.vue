@@ -18,13 +18,20 @@ function onSubmitOrReset() {
 </script>
 
 <template>
-  <input 
-    v-model="term" 
-    type="text" 
-    placeholder="Search..." 
-    @keypress.enter="onSubmitOrReset"
-  />
-  <button type="reset" :disabled="!term" @click="reset">
-    <label>Clear search</label>
-  </button>
+  <search class="flex gap-4">
+    <input 
+      v-model="term" 
+      type="text" 
+      placeholder="Search..." 
+      class="p-4 rounded-4xl bg-slate-100 sm:w-96"
+      @keypress.enter="onSubmitOrReset"
+    />
+    <button 
+      type="reset" 
+      class="text-sm disabled:opacity-25"
+      @click="reset"
+    >
+      <label>Clear search</label>
+    </button>
+  </search>
 </template>
